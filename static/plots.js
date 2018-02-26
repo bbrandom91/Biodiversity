@@ -60,17 +60,17 @@ function buildPieChart(sample){
 	sampleValues = [];
 	otuList = [];
 	Plotly.d3.json(dataURL, function(error, response){
-		responseValues = response[0];
-		sampleValues = responseValues["sample_values"].slice(0,10);
-		otuList = responseValues["otu_ids"].slice(0,10);
+		responseValuesPie = response[0];
+		sampleValuesPie = responseValuesPie["sample_values"].slice(0,10);
+		otuListPie = responseValuesPie["otu_ids"].slice(0,10);
 		//Now let's get the OTU descriptions
 		otuURL = 'otu';
 		Plotly.d3.json(otuURL, function(error,response){
-			otuResponse = response[0]["OTU descriptions"];
+			otuResponsePie = response[0]["OTU descriptions"];
 			var data = [{
-			values : sampleValues,
-			labels : otuList,
-			hovertext : otuResponse,
+			values : sampleValuesPie,
+			labels : otuListPie,
+			hovertext : otuResponsePie,
 			type : 'pie'
 			}];
 			var layout = {
@@ -94,8 +94,8 @@ function buildBubbleChart(sample){
 	otuList = [];
 	Plotly.d3.json(dataURL, function(error, response){
 		responseValues = response[0];
-		sampleValues = responseValues["sample_values"].slice(0,10);
-		otuList = responseValues["otu_ids"].slice(0,10);
+		sampleValues = responseValues["sample_values"];
+		otuList = responseValues["otu_ids"];
 		//Now let's get the OTU descriptions
 		otuURL = 'otu';
 		Plotly.d3.json(otuURL, function(error,response){
