@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+
+<div class="row">
+<div class="col-12">
+<div class="jumbotron">
+<h1 class="display-2" align="center">Belly Button Biodiversity</h1>
+<hr class="my-4">
+<p align="center">Use the interactive charts below to explore the dataset.</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="row">
+<div class="col-sm-2">
+<div class="jumbotron">
+<h4>SELECT sample</h4>
+
+<select id="selDataset" onchange="optionChanged(this.value)"></select>
+</div>
+
+<div class="panel panel-primary" id="metadata table"></div>
+
+
+</div>
+<div class="col-sm-5">
+ <div id="plot"></div>
+
+</div>
+<div class="col-sm-5">
+ <div id="gauge"></div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12">
+	<div id="bubble"></div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="{{ url_for('static', filename='plots.js') }}"></script>
+</body>
+</html>
